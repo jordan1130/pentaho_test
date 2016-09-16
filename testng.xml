@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Api Explorer TestSuit">
+	<parameter name="Base_url" value="https://www.google.com" />
+	<test name="Testing in Chrome">
+		<parameter name="browser" value="chrome" />
+			<classes>
+			<class name="com.explorer.testUtills.BaseUtils" />
+		</classes>
+	</test> 
+	
+	<test name="Testing in firefox">
+		<parameter name="browser" value="firefox" />
+			<classes>
+			<class name="com.explorer.testUtills.BaseUtils" />
+		</classes>
+	</test> 
+	
+
+</suite> 
+
