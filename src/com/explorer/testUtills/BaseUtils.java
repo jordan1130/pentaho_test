@@ -11,11 +11,8 @@ import java.util.concurrent.TimeUnit;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.HasInputDevices;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keyboard;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.Mouse;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -25,6 +22,9 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.interactions.HasInputDevices;
+import org.openqa.selenium.interactions.Keyboard;
+import org.openqa.selenium.interactions.Mouse;
 import org.openqa.selenium.internal.Locatable;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -77,6 +77,18 @@ public class BaseUtils {
 			System.setProperty("webdriver.ie.driver", "./IEDriverServer.exe");
 			driver = new InternetExplorerDriver();
 		}
+	}
+
+	private void byPath(String path) {
+		String identifire = path.split("$")[0];
+		String value = path.split("$")[1];
+		if (identifire == "xpath") {
+			driver.findElements(By.xpath(value));
+		} else if (identifire == "id") {
+			driver.findElements(By.id(value));
+		} else
+			System.err.println("identifire ");
+
 	}
 
 	// Navigate Methods
