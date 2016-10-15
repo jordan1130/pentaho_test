@@ -9,7 +9,6 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.plugin.version>3.5.1</maven.compiler.plugin.version>
 		<maven.surefire.plugin.version>2.19.1</maven.surefire.plugin.version>
-
 		<java.compiler>1.8</java.compiler>
 		<selenium.version>3.0.0-beta3</selenium.version>
 		<apache.poi.version>3.14</apache.poi.version>

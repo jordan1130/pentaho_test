@@ -66,7 +66,15 @@ public class BaseUtils {
 	// Browser Method
 
 	public void getBrowser(String browser) {
+		String osArch = System.getProperty("os.arch");
+
+		System.out.println(osArch);
 		if (browser.equalsIgnoreCase("firefox")) {
+			if (osArch == "x86") {
+				System.setProperty("webdriver.firefox.driver", "./drivers/geckodriver32.exe");
+			} else {
+				System.setProperty("webdriver.firefox.driver", "./drivers/geckodriver.exe");
+			}
 			driver = new FirefoxDriver();
 		} else if (browser.equalsIgnoreCase("chrome")) {
 			System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
