@@ -1,9 +1,9 @@
-package com.explorer.testScripts;
+package cgi.penta.testScripts;
 
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import com.explorer.testUtills.BaseUtils;
+import cgi.penta.testUtills.BaseUtils;
 
 public class Landing {
 	BaseUtils bu = new BaseUtils();

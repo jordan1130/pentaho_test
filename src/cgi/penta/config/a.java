@@ -1,4 +1,4 @@
-package com.explorer.config;
+package cgi.penta.config;
 
 public class a {
 	int b;

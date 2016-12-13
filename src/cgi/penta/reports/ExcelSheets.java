@@ -1,4 +1,4 @@
-package com.explorer.reports;
+package cgi.penta.reports;
 
 public class ExcelSheets {
 	final String dirName = "./reports/excelSheets";

@@ -1,4 +1,4 @@
-package com.explorer.testUtills;
+package cgi.penta.testUtills;
 
 import java.io.File;
 import java.io.FileInputStream;

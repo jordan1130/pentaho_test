@@ -1,4 +1,4 @@
-package com.explorer.exceptions;
+package cgi.penta.exceptions;
 
 import java.io.PrintStream;
 import java.io.PrintWriter;

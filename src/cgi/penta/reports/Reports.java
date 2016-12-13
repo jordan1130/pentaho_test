@@ -1,4 +1,4 @@
-package com.explorer.reports;
+package cgi.penta.reports;
 
 import java.io.File;
 import java.text.SimpleDateFormat;

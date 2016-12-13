@@ -1,4 +1,4 @@
-package com.explorer.log;
+package cgi.penta.test;
 
 public class Demo {
 
