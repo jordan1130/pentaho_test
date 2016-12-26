@@ -3,14 +3,14 @@ package cgi.penta.exceptions;
 import java.io.PrintStream;
 import java.io.PrintWriter;
 
-public class ExceptionApi extends Exception {
+public class ExceptionPenta extends Exception {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public ExceptionApi() {
+	public ExceptionPenta() {
 		// TODO Auto-generated constructor stub
 	}
 

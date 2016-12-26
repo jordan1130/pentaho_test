@@ -11,6 +11,7 @@ public class PropertiesReader {
 	public FileInputStream fileInputStream = null;
 	final static String dir = System.getProperty("user.dir");
 	String basedir = "./src/com/explorer/pageLocators/";
+	final String propertyfile_besedir = "./resource/propertyFile/";
 
 	public PropertiesReader() throws IOException {
 		System.out.println(dir);
@@ -23,7 +24,7 @@ public class PropertiesReader {
 		// file = new File(dir +
 		// "\\src\\com\\explorer\\pageLocators\\api.properties");
 		// Get the inputStream
-		fileInputStream = new FileInputStream(basedir + "api.properties");
+		fileInputStream = new FileInputStream(basedir + "loginPage.properties");
 		// loading properties file
 		properties.load(fileInputStream);
 
@@ -43,15 +44,10 @@ public class PropertiesReader {
 		fileInputStream = new FileInputStream(basedir + "catalog.properties");
 		properties.load(fileInputStream);
 
-		// load the inputStream using the Properties
+		// load the config.properties using the Properties
+		fileInputStream = new FileInputStream(basedir + "config.properties");
+		properties.load(fileInputStream);
 
-	}
-
-	public static void main(String[] args) {
-		// loadProperties();
-		System.out.println("welcome");
-		System.out.println(dir);
-		// System.out.println(dir);
 	}
 
 }

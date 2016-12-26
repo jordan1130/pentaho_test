@@ -1,6 +1,6 @@
 package cgi.penta.config;
 
-public class a {
+public class PentaComman {
 	int b;
 	
 
