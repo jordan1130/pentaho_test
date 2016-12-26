@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Api Explorer TestSuit">
-	<parameter name="Base_url" value="http://localhost:8080/pentaho/login" />
+	<parameter name="Base_url" value="http://localhost:8080/pentaho/Login" />
+	<parameter name="browser" value="chrome" />
+
 	<test name="Testing in Chrome">
-		<parameter name="browser" value="chrome" />
 		<classes>
-			<class name="com.explorer.testUtills.BaseUtils" />
+			<class name="cgi.penta.testUtills.BaseUtils" />
+			<class name="cgi.penta.testScripts.Landing" />
 		</classes>
 	</test>
-
-	<test name="Testing in firefox">
-		<parameter name="browser" value="firefox" />
-		<classes>
-		</classes>
-	</test>
-
 
 </suite> 
 

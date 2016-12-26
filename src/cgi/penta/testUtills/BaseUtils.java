@@ -43,7 +43,6 @@ public class BaseUtils {
 	public static final String ORGANIZATION_GRID = "";
 	WebDriver driver = null;
 	String url = null;
-	
 
 	@BeforeTest
 	@Parameters({ "browser", "Base_url" })
@@ -68,17 +67,17 @@ public class BaseUtils {
 
 	public void getBrowser(String browser) {
 		String osArch = System.getProperty("os.arch");
-
+		System.out.println(browser);
 		System.out.println(osArch);
 		if (browser.equalsIgnoreCase("firefox")) {
 			if (osArch == "x86") {
-				System.setProperty("webdriver.firefox.driver", "./drivers/geckodriver32.exe");
+				System.setProperty("webdriver.firefox.driver", "./resource/drivers/geckodriver32.exe");
 			} else {
-				System.setProperty("webdriver.firefox.driver", "./drivers/geckodriver.exe");
+				System.setProperty("webdriver.firefox.driver", "./resource/drivers/geckodriver.exe");
 			}
 			driver = new FirefoxDriver();
 		} else if (browser.equalsIgnoreCase("chrome")) {
-			System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "./resource/drivers/chromedriver.exe");
 			driver = new ChromeDriver();
 		} else if (browser.equalsIgnoreCase("safari")) {
 			driver = new SafariDriver();
