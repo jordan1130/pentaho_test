@@ -41,7 +41,7 @@ public class BaseUtils {
 	public static final String SAUCE_LAB_USER_NAME = "";
 	public static final String SAUCE_LAB_USER_KEY = "";
 	public static final String ORGANIZATION_GRID = "";
-	WebDriver driver = null;
+	static WebDriver driver = null;
 	String url = null;
 
 	@BeforeTest
@@ -87,13 +87,16 @@ public class BaseUtils {
 		}
 	}
 
-	private void byPath(String path) {
-		String identifire = path.split("$")[0];
-		String value = path.split("$")[1];
+	public void byPath(String path) {
+		String[] tempArrays = path.split("\\$");
+		String identifire = tempArrays[0];
+		String value = tempArrays[1];
 		if (identifire == "xpath") {
 			driver.findElements(By.xpath(value));
 		} else if (identifire == "id") {
 			driver.findElements(By.id(value));
+		} else if (identifire == "className") {
+			driver.findElements(By.className(value));
 		} else
 			System.err.println("identifire ");
 
@@ -243,6 +246,10 @@ public class BaseUtils {
 
 	public void typeByXpath(String locator, String value) {
 		driver.findElement(By.xpath(locator)).sendKeys(value);
+	}
+
+	public void typeById(String locator, String value) {
+		driver.findElement(By.id(locator)).sendKeys(value);
 	}
 
 	// DragAndDrop methods

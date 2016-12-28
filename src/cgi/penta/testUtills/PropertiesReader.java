@@ -7,47 +7,31 @@ import java.util.Properties;
 
 public class PropertiesReader {
 	public File file;
-	public Properties properties = new Properties();
-	public FileInputStream fileInputStream = null;
+	final static Properties properties = new Properties();
+	public static FileInputStream fileInputStream = null;
 	final static String dir = System.getProperty("user.dir");
-	String basedir = "./src/com/explorer/pageLocators/";
-	final String propertyfile_besedir = "./resource/propertyFile/";
+	static String basedir = "./src/cgi/penta/pageLocaters/";
+	final static String propertyfile_besedir = "./resource/propertyFile/";
 
-	public PropertiesReader() throws IOException {
+	public PropertiesReader() {
 		System.out.println(dir);
-		loadProperties();
-
 	}
 
-	public void loadProperties() throws IOException {
+	public Properties loadProperties() {
+		try {
+			// load the config.properties using the Properties
+			fileInputStream = new FileInputStream(propertyfile_besedir + "config.properties");
+			properties.load(fileInputStream);
 
-		// file = new File(dir +
-		// "\\src\\com\\explorer\\pageLocators\\api.properties");
-		// Get the inputStream
-		fileInputStream = new FileInputStream(basedir + "loginPage.properties");
-		// loading properties file
-		properties.load(fileInputStream);
+			// loading "loginPage" properties
+			fileInputStream = new FileInputStream(basedir + "loginPage.properties");
+			properties.load(fileInputStream);
+			
 
-		// loading "catalog" properties
-		fileInputStream = new FileInputStream(basedir + "catalog.properties");
-		properties.load(fileInputStream);
-
-		// loading "catalog" properties
-		fileInputStream = new FileInputStream(basedir + "catalog.properties");
-		properties.load(fileInputStream);
-
-		// loading "catalog" properties
-		fileInputStream = new FileInputStream(basedir + "catalog.properties");
-		properties.load(fileInputStream);
-
-		// loading "catalog" properties
-		fileInputStream = new FileInputStream(basedir + "catalog.properties");
-		properties.load(fileInputStream);
-
-		// load the config.properties using the Properties
-		fileInputStream = new FileInputStream(basedir + "config.properties");
-		properties.load(fileInputStream);
-
+		} catch (IOException e) {
+			e.getMessage();
+		}
+		return properties;
 	}
 
 }
