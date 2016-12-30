@@ -1,5 +1,8 @@
 package cgi.penta.test;
 
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+
 import cgi.penta.testBase.*;
 import cgi.penta.testUtills.BaseUtils;
 import cgi.penta.testUtills.PropertiesReader;
@@ -28,20 +31,27 @@ public class PentahoCommen implements PentaComman {
 
 	@Override
 	public void logout() {
-		// TODO Auto-generated method stub
+		bu.clickByXpath(pentaProperties.loadProperties().getProperty("penta_home_userName"));
+		bu.clickByXpath(pentaProperties.loadProperties().getProperty("penta_userName_logOut"));
 
 	}
 
 	@Override
 	public void verify_login() {
-		// TODO Auto-generated method stub
-
+		WebElement wb = bu.getWebElementByXpath(pentaProperties.loadProperties().getProperty("penta_home_userName"));
+		Boolean b = wb.isDisplayed();
+		if (b) {
+			System.out.println("userName ::"+wb.getText()); 
+			Assert.assertTrue(true, wb.getText());
+		} else {
+			Assert.fail("Not found ");
+		}
 	}
 
 	@Override
 	public void verify_logout() {
-		// TODO Auto-generated method stub
 
 	}
 
+	
 }

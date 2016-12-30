@@ -33,6 +33,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 //TestNg API
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 
@@ -54,8 +55,8 @@ public class BaseUtils {
 
 	}
 
-	@AfterClass
-	public void afterClass() {
+	@AfterSuite
+	public void driverQuit() {
 		driver.quit();
 	}
 
@@ -112,7 +113,7 @@ public class BaseUtils {
 		driver.findElement(By.cssSelector(locator)).click();
 	}
 
-	public void clickByXpath(String locator){
+	public void clickByXpath(String locator) {
 		driver.findElement(By.xpath(locator)).click();
 	}
 
