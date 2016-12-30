@@ -112,7 +112,7 @@ public class BaseUtils {
 		driver.findElement(By.cssSelector(locator)).click();
 	}
 
-	public void clickByXpath(String locator) {
+	public void clickByXpath(String locator){
 		driver.findElement(By.xpath(locator)).click();
 	}
 
